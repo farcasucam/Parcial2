@@ -1,5 +1,3 @@
-package empleados;
-
 import java.util.Scanner;
 
 public class SistemaGestionEmpleados {
