@@ -1,5 +1,3 @@
-package empleados;
-
 class Empleado {
     private String nombre;
     private String cargo;
