@@ -32,6 +32,10 @@ class Empleado {
         this.cargo = cargo;
         this.salario = salario;
     }
+    public Empleado(String nombre, String cargo) {
+        this.nombre = nombre;
+        this.cargo = cargo;
+    }
 
     @Override
     public String toString() {
