@@ -10,7 +10,7 @@ public class Empleados {
         empleados[2] = new Empleado("Pedro", "Gerente");
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Introduzca el porcentaje de aumento de salario: ");
+        System.out.println(Textos.introduzcaSalario);
         double porcentaje = scanner.nextDouble();
 
         Empleados.aumentarSalario(porcentaje);
@@ -25,7 +25,7 @@ public class Empleados {
         }
     }
     public static void mostrarEmpleados() {
-        System.out.println("Lista de Empleados:");
+        System.out.println(Textos.listaEmpleados);
         for (Empleado empleado : empleados) {
             System.out.println(empleado);
         }
