@@ -1,5 +1,5 @@
 public class Empleados {
-   
+    
     private Empleado[] lista;
 
     public Empleados(Empleado[] lista) {
@@ -14,9 +14,10 @@ public class Empleados {
     }
 
     public void mostrarLista() {
-        System.out.println("Lista de Empleados:");
+        System.out.println(Mensajes.LISTA_EMPLEADOS);
         for (Empleado empleado : lista) {
             System.out.println(empleado);
         }
     }
 }
+
