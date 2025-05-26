@@ -1,39 +1,26 @@
 import java.util.Scanner;
 
-public class SistemaGestionEmpleados {
+class SistemaGestionEmpleados {
+    private String nombre;
+    private String puesto;
+    private double salario;
 
-    private Empleado[] empleados;
-
-    public SistemaGestionEmpleados(Empleado[] empleados) {
-        this.empleados = empleados;
+    public SistemaGestionEmpleados(String nombre, String puesto, double salario) {
+        this.nombre = nombre;
+        this.puesto = puesto;
+        this.salario = salario;
     }
 
-    public void aumentarSalario(double porcentaje) {
-        for (Empleado empleado : empleados) {
-            double nuevoSalario = empleado.salario * (1 + porcentaje / 100);
-            empleado.salario = nuevoSalario;
-        }
+    public double getSalario() {
+        return salario;
     }
 
-    public static void main(String[] args) {
-        Empleado[] empleados = new Empleado[3];
-        empleados[0] = new Empleado("Juan", "Desarrollador", 50000);
-        empleados[1] = new Empleado("María", "Diseñadora", 45000);
-        empleados[2] = new Empleado("Pedro", "Gerente", 60000);
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
 
-        SistemaGestionEmpleados sistema = new SistemaGestionEmpleados(empleados);
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Introduzca el porcentaje de aumento de salario: ");
-        double porcentaje = scanner.nextDouble();
-
-        sistema.aumentarSalario(porcentaje);
-        
-        System.out.println("Lista de Empleados:");
-        for (Empleado empleado : empleados) {
-            System.out.println(empleado);
-        }
-
-        scanner.close();
+    @Override
+    public String toString() {
+        return "Nombre: " + nombre + ", Puesto: " + puesto + ", Salario: " + salario;
     }
 }
