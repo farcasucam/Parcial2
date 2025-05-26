@@ -3,6 +3,9 @@ public class Empleado {
     private final String cargo;
     private final double salario;
 
+    /*
+     * metodo empleado para recoger las variables
+     */
     public Empleado(String nombre, String cargo, double salario) {
         this.nombre = nombre;
         this.cargo = cargo;
