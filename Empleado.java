@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class Empleado {
     private String nombre;
     private String cargo;
@@ -40,5 +42,37 @@ class Empleado {
                 ", cargo='" + cargo + '\'' +
                 ", salario=" + salario +
                 '}';
+    }
+}
+
+class Empleados {
+    private Empleado[] lista;
+
+    public Empleados(int cantidad) {
+        lista = new Empleado[cantidad];
+    }
+
+    public void altaEmpleado(int indice, String nombre, String cargo, double salario) {
+        if (indice >= 0 && indice < lista.length) {
+            lista[indice] = new Empleado(nombre, cargo, salario);
+        }
+    }
+
+    public void aumentarSalario(double porcentaje) {
+        for (Empleado empleado : lista) {
+            if (empleado != null) {
+                double nuevoSalario = empleado.getSalario() * (1 + porcentaje / 100);
+                empleado.setSalario(nuevoSalario);
+            }
+        }
+    }
+
+    public void mostrarLista() {
+        System.out.println("Lista de Empleados:");
+        for (Empleado empleado : lista) {
+            if (empleado != null) {
+                System.out.println(empleado);
+            }
+        }
     }
 }
