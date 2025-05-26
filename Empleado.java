@@ -1,16 +1,7 @@
 class Empleado {
-    private String nombre;
-    private String cargo;
-    private double salario;
-
-    Arraylist<Empleado> empleados;  
-
-    // Constructor
-    public Empleado() {
-        this.nombre = "";
-        this.cargo = "";
-        this.salario = 0.0;
-    }
+    String nombre;
+    String cargo;
+    double salario;
 
     Empleado(String nombre, String cargo, double salario) {
         this.nombre = nombre;
@@ -43,12 +34,8 @@ class Empleado {
     public void aumentarSalario(double porcentaje) {
         this.salario *= (1 + porcentaje / 100);
     }   
-   
-    public void mostrarInformacion() {
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Cargo: " + cargo);
-        System.out.println("Salario: " + salario);
-    }
+    
+
     @Override
     public String toString() {
         return "Empleado{" +
@@ -56,8 +43,11 @@ class Empleado {
                 ", cargo='" + cargo + '\'' +
                 ", salario=" + salario +
                 '}';
-
     }
-
-    // se ha crado los getters y setters para acceder a los atributos privados, hecho el arraylist de empleados y el constructor por defecto
+    public void mostrarInformacion() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mostrarInformacion'");
+    }
+    // Mejora: Añadir un método para mostrar la información del empleado
+    
 }
