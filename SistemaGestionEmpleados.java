@@ -1,39 +1,28 @@
-import java.util.Scanner;
-
+/**
+ * Clase principal que gestiona la ejecución del sistema de empleados.
+ */
 public class SistemaGestionEmpleados {
-
-    private Empleado[] empleados;
-
-    public SistemaGestionEmpleados(Empleado[] empleados) {
-        this.empleados = empleados;
-    }
-
-    public void aumentarSalario(double porcentaje) {
-        for (Empleado empleado : empleados) {
-            double nuevoSalario = empleado.salario * (1 + porcentaje / 100);
-            empleado.salario = nuevoSalario;
-        }
-    }
-
+    /**
+     * Método principal.
+     * @param args Argumentos de línea de comandos.
+     */
     public static void main(String[] args) {
-        Empleado[] empleados = new Empleado[3];
-        empleados[0] = new Empleado("Juan", "Desarrollador", 50000);
-        empleados[1] = new Empleado("María", "Diseñadora", 45000);
-        empleados[2] = new Empleado("Pedro", "Gerente", 60000);
+        Empleados empleados = new Empleados();
 
-        SistemaGestionEmpleados sistema = new SistemaGestionEmpleados(empleados);
+        // Dar de alta empleados (debe usarse el método de la clase Empleados)
+        empleados.altaEmpleado(new Empleado("Ana", 2000));
+        empleados.altaEmpleado(new Empleado("Luis", 2500));
+        empleados.altaEmpleado(new Empleado("Marta", 1800));
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Introduzca el porcentaje de aumento de salario: ");
-        double porcentaje = scanner.nextDouble();
+        // Mostrar empleados
+        System.out.println(Textos.MSG_LISTADO);
+        empleados.mostrarEmpleados();
 
-        sistema.aumentarSalario(porcentaje);
-        
-        System.out.println("Lista de Empleados:");
-        for (Empleado empleado : empleados) {
-            System.out.println(empleado);
-        }
+        // Aumentar salario a todos un 10%
+        empleados.aumentarSalarioTodos(10);
 
-        scanner.close();
+        // Mostrar empleados tras aumento de salario
+        System.out.println("\n" + Textos.MSG_LISTADO_AUMENTO);
+        empleados.mostrarEmpleados();
     }
 }
