@@ -8,14 +8,34 @@ public class SistemaGestionEmpleados {
         this.empleados = empleados;
     }
 
-    public void aumentarSalario(double porcentaje) {
-        for (Empleado empleado : empleados) {
-            double nuevoSalario = empleado.salario * (1 + porcentaje / 100);
-            empleado.salario = nuevoSalario;
-        }
-    }
+
+        /**
+        Array de la clase Empleado, para añadir información de cada persona
+        */
+        Empleados empleados = new Empleados(3);
+
+        empleados.altaEmpleado(new Empleado("Juan", "Desarrollador", 50000));
+        empleados.altaEmpleado(new Empleado("María", "Diseñadora", 45000));
+        empleados.altaEmpleado(new Empleado("Pedro", "Gerente", 60000));
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Introduzca el porcentaje de aumento de salario: ");
+        double porcentaje = scanner.nextDouble();
+
+        empleados.aumentarSalario(porcentaje);
+
+        System.out.println("Lista de Empleados:");
+        empleados.mostrarEmpleados();
+
+        scanner.close();
+    
+
 
     public static void main(String[] args) {
+
+          /**
+        Array de la clase Empleados, para añdir los empleados a una lista general
+        */
         Empleado[] empleados = new Empleado[3];
         empleados[0] = new Empleado("Juan", "Desarrollador", 50000);
         empleados[1] = new Empleado("María", "Diseñadora", 45000);

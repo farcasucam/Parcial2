@@ -1,20 +1,38 @@
-class Empleado {
-    String nombre;
-    String cargo;
-    double salario;
+public class Empleado {
 
-    public Empleado(String nombre, String cargo, double salario) {
-        this.nombre = nombre;
-        this.cargo = cargo;
-        this.salario = salario;
-    }
+	
+	
+	    private String nombre;
+	    private String cargo;
+	    private double salario;
 
-    @Override
-    public String toString() {
-        return "Empleado{" +
-                "nombre='" + nombre + '\'' +
-                ", cargo='" + cargo + '\'' +
-                ", salario=" + salario +
-                '}';
-    }
-}
+
+	    public Empleado(String nombre, String cargo, double salario) {
+	        this.nombre = nombre;
+	        this.cargo = cargo;
+	        this.salario = salario;
+	    }
+	    public String getNombre() {
+	        return nombre;
+	    }
+	    public void setNombre(String nombre) {
+	        this.nombre = nombre;
+	    }
+	    public String getCargo() {
+	        return cargo;
+	    }
+	    public void setCargo(String cargo) {
+	        this.cargo = cargo;
+	    }
+	    public double getSalario() {
+	        return salario;
+	    }
+		@Override
+		public String toString() {
+			return "Empleado [nombre=" + nombre + ", cargo=" + cargo + ", salario=" + salario + "]";
+		}
+
+	    
+	}
+
+
