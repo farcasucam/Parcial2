@@ -14,7 +14,7 @@ public class Empleados {
             lista[contador] = empleado;
             contador++;
         } else {
-            System.out.println("No se pueden añadir más empleados.");
+            System.out.println(Mensajes.NO_MAS_EMPLEADOS);
         }
     }
 
@@ -28,7 +28,7 @@ public class Empleados {
     }
 
     public void mostrarEmpleados() {
-        System.out.println("Lista de Empleados:");
+        System.out.println(Mensajes.LISTA_EMPLEADOS);
         for (Empleado empleado : lista) {
             if (empleado != null) {
                 System.out.println(empleado);
@@ -36,7 +36,6 @@ public class Empleados {
         }
     }
 
-    // Getter para lista si se necesita externamente
     public Empleado[] getLista() {
         return lista;
     }
