@@ -94,7 +94,8 @@ public class SistemaGestionEmpleados {
 
         sistema.aumentarSalario(porcentaje);
         sistema.mostrarEmpleados();
-
+ 
         scanner.close();
+        System.out.println();
     }
 }
