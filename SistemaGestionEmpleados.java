@@ -1,8 +1,11 @@
 import java.util.Scanner;
 
+/**
+ * Clase principal que gestiona la ejecución del sistema de empleados.
+ */
 public class SistemaGestionEmpleados {
-    
     public static void main(String[] args) {
+        // Inicialización de empleados con la nueva estructura
         Empleado[] listaInicial = {
             new Empleado("Juan", "Desarrollador", 50000),
             new Empleado("María", "Diseñadora", 45000),
@@ -22,4 +25,3 @@ public class SistemaGestionEmpleados {
         scanner.close();
     }
 }
-
