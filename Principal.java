@@ -20,7 +20,14 @@ public class Principal {
             System.out.println(empleado);
         }
         scanner.close();
-            
+        // Mostrar información de cada empleado
+        for (Empleado empleado : empleados) {
+            empleado.mostrarInformacion();
+        }   
+        System.out.println("Salarios actualizados.");
+        System.out.println("Fin del programa.");    
+        
+
 
 }
 }
