@@ -1,56 +1,5 @@
 import java.util.Scanner;
 
-class Empleado {
-    private String nombre;
-    private String puesto;
-    private double salario;
-    
-    /*.
-     *constructor para ingresar parametros ala clase empleado
-     */
-    public Empleado(String nombre, String puesto, double salario) {
-        this.nombre = nombre;
-        this.puesto = puesto;
-        this.salario = salario;
-    }
-
-    /*
-     * metodo para ingresar un doble porcentaje 
-     */
-    public void aumentarSalario(double porcentaje) {
-        this.salario *= (1 + porcentaje / 100);
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getPuesto() {
-        return puesto;
-    }
-
-    public double getSalario() {
-        return salario;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setPuesto(String puesto) {
-        this.puesto = puesto;
-    }
-
-    public void setSalario(double salario) {
-        this.salario = salario;
-    }
-
-    @Override
-    public String toString() {
-        return "Nombre: " + nombre + ", Puesto: " + puesto + ", Salario: " + salario;
-    }
-}
-
 public class SistemaGestionEmpleados {
 
     private Empleado[] empleados;
@@ -68,7 +17,7 @@ public class SistemaGestionEmpleados {
         }
     }
 
-    public void mostrarEmpleados() {
+    public void mostrarEmpleados() {a
         System.out.println("Lista de Empleados:");
         for (Empleado empleado : empleados) {
             System.out.println(empleado);
