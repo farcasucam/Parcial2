@@ -18,7 +18,11 @@ class Empleados
         this.lista = lista;
     }
 
-    // Método para aumentar el salario de todos los empleados
+    /**
+     * @param porcentaje
+     * Método para aumentar el salario de todos los empleados en un porcentaje dado.
+     * Este método recorre la lista de empleados y actualiza el salario de cada uno.
+     */
     public void aumentarSalario(double porcentaje) 
     {
         for (Empleado empleado : lista) 
@@ -31,7 +35,10 @@ class Empleados
         }
     }
 
-    // Método para obtener un empleado por su nombre
+    /**
+     * Método para mostrar los nombres de todos los empleados.
+     * Este método recorre la lista de empleados y muestra el nombre de cada uno.
+     */
     public void mostrarEmpleados()
     {
         for (Empleado empleado : lista) 
@@ -43,7 +50,13 @@ class Empleados
         }
     }
 
-    // Método para dar de alta un empleado en una posición específica
+    /**
+     * 
+     * @param empleado
+     * @param posicion
+     * Método para dar de alta un empleado en una posición específica de la lista.
+     * Este método verifica que la posición esté dentro del rango de la lista antes de asignar el empleado.
+     */
     public void altaEmpleados(Empleado empleado, int posicion)
     {
         if (posicion >= 0 && posicion < lista.length) 

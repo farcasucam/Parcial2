@@ -25,6 +25,10 @@ public class Main
         scanner.close();
     }
 
+    /**
+     * Clase que contiene los textos utilizados en la aplicación.
+     * Esta clase es útil para centralizar los mensajes y facilitar su modificación.
+     */
     public static class Textos
     {
         public final static String AUMENTAR_SUELDO = "Introduzca el porcentaje de aumento de salario: ";
