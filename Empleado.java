@@ -1,6 +1,6 @@
 class Empleado {
-    String nombre;
-    String cargo;
+    private String nombre;
+    private String cargo;
     double salario;
 
     public Empleado(String nombre, String cargo, double salario) {
@@ -8,6 +8,44 @@ class Empleado {
         this.cargo = cargo;
         this.salario = salario;
     }
+
+    
+
+    public String getNombre() {
+        return nombre;
+    }
+
+
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+
+
+    public String getCargo() {
+        return cargo;
+    }
+
+
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
+
+
+    public double getSalario() {
+        return salario;
+    }
+
+
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+
+
 
     @Override
     public String toString() {
