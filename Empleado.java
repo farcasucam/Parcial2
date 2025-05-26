@@ -1,4 +1,5 @@
-class Empleado {
+class Empleado 
+{
     private String nombre;
     private String cargo;
     private double salario;
