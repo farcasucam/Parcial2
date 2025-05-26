@@ -14,7 +14,17 @@ public class Principal {
         double porcentaje = scanner.nextDouble();
 
         sistema.aumentarSalario(porcentaje);
-        
+        // he realizado correcciones en el código para que funcione correctamente
+        try {
+            // Simular una excepción para probar el manejo de errores
+            if (porcentaje < 0) {
+                throw new Exception("El porcentaje no puede ser negativo.");
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+        // Mostrar la lista de empleados
+        System.out.println("Empleados registrados:");   
         System.out.println("Lista de Empleados:");
         for (Empleado empleado : empleados) {
             System.out.println(empleado);
