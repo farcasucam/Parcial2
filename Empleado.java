@@ -37,11 +37,7 @@ class Empleado {
 
     @Override
     public String toString() {
-        return "Empleado{" +
-                "nombre='" + nombre + '\'' +
-                ", cargo='" + cargo + '\'' +
-                ", salario=" + salario +
-                '}';
+        return Mensajes.EMPLEADO_FORMATO.format(nombre, cargo, salario);
     }
 }
 
@@ -68,11 +64,17 @@ class Empleados {
     }
 
     public void mostrarLista() {
-        System.out.println("Lista de Empleados:");
+        System.out.println(Mensajes.LISTA_EMPLEADOS);
         for (Empleado empleado : lista) {
             if (empleado != null) {
                 System.out.println(empleado);
             }
         }
     }
+}
+
+class Mensajes {
+    public static final String INTRODUCIR_PORCENTAJE = "Introduzca el porcentaje de aumento de salario: ";
+    public static final String LISTA_EMPLEADOS = "Lista de Empleados:";
+    public static final String EMPLEADO_FORMATO = "Empleado{nombre='%s', cargo='%s', salario=%.2f}";
 }
