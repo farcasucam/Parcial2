@@ -1,39 +1,36 @@
+/**
+ * Clase principal de la aplicación de gestión de empleados.
+ */
+// Importa la clase Scanner para leer datos desde la consola
 import java.util.Scanner;
 
 public class SistemaGestionEmpleados {
-
-    private Empleado[] empleados;
-
-    public SistemaGestionEmpleados(Empleado[] empleados) {
-        this.empleados = empleados;
-    }
-
-    public void aumentarSalario(double porcentaje) {
-        for (Empleado empleado : empleados) {
-            double nuevoSalario = empleado.salario * (1 + porcentaje / 100);
-            empleado.salario = nuevoSalario;
-        }
-    }
-
+    /**
+     * Método principal que ejecuta la aplicación.
+     * @param args 
+     */
     public static void main(String[] args) {
-        Empleado[] empleados = new Empleado[3];
-        empleados[0] = new Empleado("Juan", "Desarrollador", 50000);
-        empleados[1] = new Empleado("María", "Diseñadora", 45000);
-        empleados[2] = new Empleado("Pedro", "Gerente", 60000);
+        // Crea una instancia de la clase Empleados para gestionar la lista
+        Empleados empleados = new Empleados();
+        // Da de alta un empleado llamado Juan
+        empleados.altaEmpleado(new Empleado("Juan", "Desarrollador", 50000));
+        // Da de alta un empleado llamado María
+        empleados.altaEmpleado(new Empleado("María", "Diseñadora", 45000));
+        // Da de alta un empleado llamado Pedro
+        empleados.altaEmpleado(new Empleado("Pedro", "Gerente", 60000));
 
-        SistemaGestionEmpleados sistema = new SistemaGestionEmpleados(empleados);
-
+        // Crea un objeto Scanner para leer la entrada del usuario
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Introduzca el porcentaje de aumento de salario: ");
+        // Muestra el mensaje para introducir el porcentaje de aumento
+        System.out.print(Mensajes.INTRODUZCA_PORCENTAJE);
+        // Lee el porcentaje introducido por el usuario
         double porcentaje = scanner.nextDouble();
 
-        sistema.aumentarSalario(porcentaje);
-        
-        System.out.println("Lista de Empleados:");
-        for (Empleado empleado : empleados) {
-            System.out.println(empleado);
-        }
-
+        // Aumenta el salario de todos los empleados según el porcentaje
+        empleados.aumentarSalario(porcentaje);
+        // Muestra la lista de empleados actualizada
+        empleados.mostrarEmpleados();
+        // Cierra el Scanner
         scanner.close();
     }
 }
